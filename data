@@ -1,1 +1,15 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib as mat
+import bokeh
 
+
+Wine1 = pd.read_csv("https://raw.githubusercontent.com/insaid2018/Term-1/master/Data/Casestudy/wine1.csv")
+Wine2 = pd.read_csv("https://raw.githubusercontent.com/insaid2018/Term-1/master/Data/Casestudy/wine2.csv")
+
+frames = [Wine1,Wine2]
+reviews = pd.concat(frames)
+reviews.shape
+
+reviews['province'].value_counts().head(10).plot.bar()
