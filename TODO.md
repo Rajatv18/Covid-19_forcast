@@ -1,31 +1,44 @@
-### 1.1. Speed comparision between Numpy and Python Lists
-import time
-import numpy as np
-
-size_of_vec = 1000000
-
-def pure_python_version():                                                # This function will return the time for python calculation
-    time_python = time.time()                                             # Start time before operation
-    my_list1 = range(size_of_vec)                                         # Creating a list with 1000000 values
-    my_list2 = range(size_of_vec)
-    sum_list = [my_list1[i] + my_list2[i] for i in range(len(my_list1))]  # Calculating the sum
-    return time.time() - time_python                                      # Return Current time - start time
-
-def numpy_version():                                                      # This function will return the time for numpy calculation
-    time_numpy = time.time()                                              # Start time before operation
-    my_arr1 = np.arange(size_of_vec)                                      # Creating a numpy array of 1000000 values
-    my_arr2 = np.arange(size_of_vec)
-    sum_array = my_arr1 + my_arr2                                         # Calculate the sum
-    return time.time() - time_numpy                                       # Return current time - start time
+# TODO
 
 
-python_time = pure_python_version()                                       # Time taken for Python expression
-numpy_time = numpy_version()                                              # Time taken for numpy operation
-print("Pure Python version {:0.4f}".format(python_time))
-print("Numpy version {:0.4f}".format(numpy_time))
-print("Numpy is in this example {:0.4f} times faster!".format(python_time/numpy_time))
 
+#### Group steps
 
+- Think of something to add/change
+
+- Text everyone what you're going to add/change
+
+- Add/change something 
+
+  - Keep track of what you added/changed and what worked/what didn't
+
+  - Email to Danny and he'll upload
 
     
+#### What people are currently adding/changing 
 
+- Danny: activation functions/layers to try to fix the saturation issue 
+
+#### Possible things to add/change
+
+- Add other data, e.g. U.S. [census stuff](https://data.census.gov/cedsci/advanced?tid=GOVSTIMESERIES.CG00ORG01)
+
+- Log transform outcome 
+
+- Change outcome to per-capita (requires getting population data somehow)
+
+- Look at daily changes rather than counts
+
+- Do things at the state level
+
+- Add other countries
+
+- Whatever your little heart desires
+
+  
+
+#### Other things that need to get fixed eventually 
+
+- Matching by county
+- PCA considering the missing columns
+  - I think I'm filling in 0s right now instead of some sort of averages—probably a better way to do this
